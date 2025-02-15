@@ -1,0 +1,28 @@
+O:\Code\CS projects\Axon\Axon\bin\Debug\net9.0\Axon.exe
+O:\Code\CS projects\Axon\Axon\bin\Debug\net9.0\Axon.deps.json
+O:\Code\CS projects\Axon\Axon\bin\Debug\net9.0\Axon.runtimeconfig.json
+O:\Code\CS projects\Axon\Axon\bin\Debug\net9.0\Axon.dll
+O:\Code\CS projects\Axon\Axon\bin\Debug\net9.0\Axon.pdb
+O:\Code\CS projects\Axon\Axon\obj\Debug\net9.0\Axon.GeneratedMSBuildEditorConfig.editorconfig
+O:\Code\CS projects\Axon\Axon\obj\Debug\net9.0\Axon.AssemblyInfoInputs.cache
+O:\Code\CS projects\Axon\Axon\obj\Debug\net9.0\Axon.AssemblyInfo.cs
+O:\Code\CS projects\Axon\Axon\obj\Debug\net9.0\Axon.csproj.CoreCompileInputs.cache
+O:\Code\CS projects\Axon\Axon\obj\Debug\net9.0\Axon.dll
+O:\Code\CS projects\Axon\Axon\obj\Debug\net9.0\refint\Axon.dll
+O:\Code\CS projects\Axon\Axon\obj\Debug\net9.0\Axon.pdb
+O:\Code\CS projects\Axon\Axon\obj\Debug\net9.0\Axon.genruntimeconfig.cache
+O:\Code\CS projects\Axon\Axon\obj\Debug\net9.0\ref\Axon.dll
+C:\Users\craig\Desktop\My files\code projects\CS projects\Axon\Axon\bin\Debug\net9.0\Axon.exe
+C:\Users\craig\Desktop\My files\code projects\CS projects\Axon\Axon\bin\Debug\net9.0\Axon.deps.json
+C:\Users\craig\Desktop\My files\code projects\CS projects\Axon\Axon\bin\Debug\net9.0\Axon.runtimeconfig.json
+C:\Users\craig\Desktop\My files\code projects\CS projects\Axon\Axon\bin\Debug\net9.0\Axon.dll
+C:\Users\craig\Desktop\My files\code projects\CS projects\Axon\Axon\bin\Debug\net9.0\Axon.pdb
+C:\Users\craig\Desktop\My files\code projects\CS projects\Axon\Axon\obj\Debug\net9.0\Axon.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\craig\Desktop\My files\code projects\CS projects\Axon\Axon\obj\Debug\net9.0\Axon.AssemblyInfoInputs.cache
+C:\Users\craig\Desktop\My files\code projects\CS projects\Axon\Axon\obj\Debug\net9.0\Axon.AssemblyInfo.cs
+C:\Users\craig\Desktop\My files\code projects\CS projects\Axon\Axon\obj\Debug\net9.0\Axon.csproj.CoreCompileInputs.cache
+C:\Users\craig\Desktop\My files\code projects\CS projects\Axon\Axon\obj\Debug\net9.0\Axon.dll
+C:\Users\craig\Desktop\My files\code projects\CS projects\Axon\Axon\obj\Debug\net9.0\refint\Axon.dll
+C:\Users\craig\Desktop\My files\code projects\CS projects\Axon\Axon\obj\Debug\net9.0\Axon.pdb
+C:\Users\craig\Desktop\My files\code projects\CS projects\Axon\Axon\obj\Debug\net9.0\Axon.genruntimeconfig.cache
+C:\Users\craig\Desktop\My files\code projects\CS projects\Axon\Axon\obj\Debug\net9.0\ref\Axon.dll
