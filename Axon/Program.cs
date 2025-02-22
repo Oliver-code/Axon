@@ -1,4 +1,4 @@
-﻿
+﻿using System.Diagnostics;
 class Program
 {
 
@@ -35,6 +35,11 @@ class Program
 
         }
 
+        if (!Directory.Exists(arg))
+        {
+            goto restart;
+        }   
+
         syspath = arg;
 
         restart:
@@ -42,7 +47,7 @@ class Program
         if (firstboot)
         {
             Console.Title = "Axon";
-            Console.WriteLine("Welcome to Axon! version 0.5");
+            Console.WriteLine("Welcome to Axon! version 0.6");
             firstboot = false;
 
         }
@@ -54,13 +59,34 @@ class Program
         if (inp == "help")
         {
 
-            Console.WriteLine("about \ndir \ncd <directory> \n echo <text>");
+            Console.WriteLine("about \ndir \ncd <folder> \necho \ncls");
             Main(restart);
 
 
 
         }
 
+        if (inp == "tasklist")
+        {
+            Process[] processes = Process.GetProcesses();
+            foreach (Process process in processes)
+            {
+                Console.WriteLine($"Process Name: {process.ProcessName}");
+            }
+            Main(restart);
+        }
+
+        if (inp == "cls")
+        {
+            Console.Clear();
+            Main(restart);
+        }
+
+        if  (inp == "about")
+        {
+            Console.WriteLine("Version: 0.6 \nAxon is a simple command line interface that is written in C# and is open source");
+            Main(restart);
+        }
 
         if (inp == "dir")
         {
