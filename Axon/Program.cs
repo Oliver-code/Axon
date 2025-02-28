@@ -86,7 +86,7 @@ class Program
         if (inp == "help")
         {
 
-            Console.WriteLine("about \ndir \ncd <folder> \necho \ncls \ncrash <command>");
+            Console.WriteLine("about \ndir \ncd <folder> \necho \ncls \ncrash <command> \nforcecrash");
             Main(restart);
 
 
