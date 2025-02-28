@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\craig\\Desktop\\My files\\code projects\\CS projects\\Axon\\Axon\\Axon.csproj",
+      "projectUniqueName": "O:\\Code\\CS projects\\Axon\\Axon\\Axon.csproj",
       "projectName": "Axon",
-      "projectPath": "C:\\Users\\craig\\Desktop\\My files\\code projects\\CS projects\\Axon\\Axon\\Axon.csproj",
+      "projectPath": "O:\\Code\\CS projects\\Axon\\Axon\\Axon.csproj",
       "packagesPath": "C:\\Users\\craig\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\craig\\Desktop\\My files\\code projects\\CS projects\\Axon\\Axon\\obj\\",
+      "outputPath": "O:\\Code\\CS projects\\Axon\\Axon\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -33,7 +33,6 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {

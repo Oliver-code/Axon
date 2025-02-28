@@ -1,0 +1,7 @@
+Exeption: 
+Program was force terminated by user 
+
+
+Stack Trace: 
+   at Program.Main(String[] args) in O:\Code\CS projects\Axon\Axon\Program.cs:line 211 
+Time & date: 28/02/2025 21:19:43

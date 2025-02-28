@@ -1,6 +1,33 @@
 ﻿using System.Diagnostics;
+
+public class Forcecrash : Exception
+{
+
+    public Forcecrash() : base("Program was force terminated by user")
+    {
+
+    }
+
+}
+
 class Program
 {
+
+    static void Bluescreen(Exception ex)
+    {
+
+
+        Console.BackgroundColor = ConsoleColor.Blue;
+        Console.Clear();
+        Console.ForegroundColor = ConsoleColor.White;
+        DateTime datetime = DateTime.Now;
+        Console.WriteLine($"An error has occurred, crash data is being collected and can be accessed by using the 'crash dumpview' command");
+        File.WriteAllText("Reg\\crashdump\\crashdump.dump", $"Exeption: \n{ex.Message} \n\n\nStack Trace: \n{ex.StackTrace} \nTime & date: {datetime}");
+        Console.Write("Press any key to exit . . . ");
+        Console.ReadKey();
+        Environment.Exit(0);
+
+    }
 
     static string Splitfirst(string input)
     {
@@ -47,7 +74,7 @@ class Program
         if (firstboot)
         {
             Console.Title = "Axon";
-            Console.WriteLine("Welcome to Axon! version 0.6");
+            Console.WriteLine("Welcome to Axon! version 0.7");
             firstboot = false;
 
         }
@@ -59,7 +86,7 @@ class Program
         if (inp == "help")
         {
 
-            Console.WriteLine("about \ndir \ncd <folder> \necho \ncls");
+            Console.WriteLine("about \ndir \ncd <folder> \necho \ncls \ncrash <command>");
             Main(restart);
 
 
@@ -84,82 +111,114 @@ class Program
 
         if  (inp == "about")
         {
-            Console.WriteLine("Version: 0.6 \nAxon is a simple command line interface that is written in C# and is open source");
+            Console.WriteLine("Version: 0.7 \nAxon is a simple command line interface that is written in C# and is open source");
+            
+
             Main(restart);
         }
 
         if (inp == "dir")
         {
 
-            if (!Directory.Exists(syspath))
+            try
             {
 
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("There has been a error and the path is not valid. enter the new path below");
 
-                Console.ForegroundColor = ConsoleColor.White;
-                syspath = Console.ReadLine();
-                if (!syspath.EndsWith('\\'))
+
+                if (!Directory.Exists(syspath))
                 {
-                    syspath = $"{syspath}\\";
+
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("There has been a error and the path is not valid. enter the new path below");
+
+                    Console.ForegroundColor = ConsoleColor.White;
+                    syspath = Console.ReadLine();
+                    if (!syspath.EndsWith('\\'))
+                    {
+                        syspath = $"{syspath}\\";
+                    }
+
+
+                    Main(restart);
+
                 }
 
+                DirectoryInfo[] folders = new DirectoryInfo(syspath).GetDirectories();
+                FileInfo[] files = new DirectoryInfo(syspath).GetFiles();
+
+                foreach (DirectoryInfo folder in folders)
+                {
+
+
+
+                    Console.WriteLine($"Directory: {folder.Name}");
+
+                }
+
+                foreach (FileInfo file in files)
+                {
+
+                    int filekb = Convert.ToInt32(file.Length / 1024);
+
+                    if (file.Length > 1024 && filekb > 1000)
+                    {
+                        Console.WriteLine($"File: {file.Name}, Size: {filekb} KB");
+                        goto end;
+                    }
+
+                    if (file.Length / 1024 > 1000)
+                    {
+
+                        long filemb = file.Length / 1024 / 1000;
+
+                        Console.WriteLine($"File: {file.Name}, Size: {filemb} MB");
+                        goto end;
+                    }
+
+                    else
+                    {
+                        Console.WriteLine($"File: {file.Name}, Size: {file.Length} Bytes");
+                        goto end;
+                    }
+
+
+                end:;
+
+
+                }
 
                 Main(restart);
-
             }
 
-            DirectoryInfo[] folders = new DirectoryInfo(syspath).GetDirectories();
-            FileInfo[] files = new DirectoryInfo(syspath).GetFiles();
-
-            foreach (DirectoryInfo folder in folders)
+            catch (Exception ex)
             {
-
-
-
-                Console.WriteLine($"Directory: {folder.Name}");
-
+                Bluescreen(ex);
             }
-
-            foreach (FileInfo file in files)
-            {
-
-                int filekb = Convert.ToInt32(file.Length / 1024);
-
-                if (file.Length > 1024 && filekb > 1000)
-                {
-                    Console.WriteLine($"File: {file.Name}, Size: {filekb} KB");
-                    goto end;
-                }
-
-                if (file.Length / 1024 > 1000)
-                {
-
-                    long filemb = file.Length / 1024 / 1000;
-
-                    Console.WriteLine($"File: {file.Name}, Size: {filemb} MB");
-                    goto end;
-                }
-
-                else
-                {
-                    Console.WriteLine($"File: {file.Name}, Size: {file.Length} Bytes");
-                    goto end;
-                }
-
-
-            end:;
-
-
-            }
-
-            Main(restart);
 
         }
 
         if (inp == "")
         {
             Main(restart);
+        }
+
+        if (inp == "forcecrash")
+        {
+
+            try
+            {
+
+                throw new Forcecrash();
+
+            }
+
+            catch(Forcecrash ex)
+            {
+
+                Bluescreen(ex);
+
+            }
+
         }
 
         if (inp == "exit")
@@ -257,6 +316,32 @@ class Program
 
             }
             
+            if (com == "crash")
+            {
+
+                if (exp == "dumpview")
+                {
+
+                    if (!File.Exists("Reg\\crashdump\\crashdump.dump"))
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine("No crashdump data has been found");
+                        Console.ResetColor();
+                        Main(restart);
+                    }
+
+                    string[] data = File.ReadAllLines("Reg\\crashdump\\crashdump.dump");
+                    foreach (string line in data)
+                    {
+
+                        Console.WriteLine(line);
+
+                    }
+                    Main(restart);
+                   
+                }
+
+            }
             
             else
             {
