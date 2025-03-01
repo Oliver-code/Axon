@@ -13,6 +13,25 @@ public class Forcecrash : Exception
 class Program
 {
 
+    static bool IsFullPath(string path)
+    {
+
+        if (!path.Contains('\\'))
+        {
+
+            return false;
+
+        }
+
+        else
+        {
+
+            return true;
+
+        }
+
+    }
+
     static void Bluescreen(Exception ex)
     {
 
@@ -74,7 +93,7 @@ class Program
         if (firstboot)
         {
             Console.Title = "Axon";
-            Console.WriteLine("Welcome to Axon! version 0.7");
+            Console.WriteLine("Welcome to Axon! version 0.8");
             firstboot = false;
 
         }
@@ -86,7 +105,7 @@ class Program
         if (inp == "help")
         {
 
-            Console.WriteLine("about \ndir \ncd <folder> \necho \ncls \ncrash <command> \nforcecrash");
+            Console.WriteLine("about \ndir \ncd <folder> \necho \ncls \ncrash <command> \ntaskstart <application> \nforcecrash");
             Main(restart);
 
 
@@ -111,7 +130,7 @@ class Program
 
         if  (inp == "about")
         {
-            Console.WriteLine("Version: 0.7 \nAxon is a simple command line interface that is written in C# and is open source");
+            Console.WriteLine("Version: 0.8 \nAxon is a simple command line interface that is written in C# and is open source");
             
 
             Main(restart);
@@ -316,6 +335,42 @@ class Program
 
             }
             
+            if (com == "taskstart")
+            {
+
+                if (IsFullPath(exp))
+                {
+                    if (!File.Exists(exp))
+                    {
+
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine("Application does not exist");
+                        Console.ResetColor();
+
+                    }
+
+                    Process.Start(exp);
+                    Main(restart);
+
+                }
+
+                else
+                {
+
+                    if (!File.Exists($"{syspath}\\{exp}"))
+                    {
+
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine("Application does not exist");
+                        Console.ResetColor();
+
+                    }
+                    Process.Start($"{syspath}\\{exp}");
+                    Main(restart);
+                }
+
+            }
+
             if (com == "crash")
             {
 
