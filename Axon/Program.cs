@@ -346,7 +346,7 @@ class Program
                         Console.ForegroundColor = ConsoleColor.Red;
                         Console.WriteLine("Application does not exist");
                         Console.ResetColor();
-
+                        Main(restart);
                     }
 
                     Process.Start(exp);
@@ -363,7 +363,7 @@ class Program
                         Console.ForegroundColor = ConsoleColor.Red;
                         Console.WriteLine("Application does not exist");
                         Console.ResetColor();
-
+                        Main(restart);
                     }
                     Process.Start($"{syspath}\\{exp}");
                     Main(restart);
