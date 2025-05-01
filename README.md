@@ -1,1 +1,1 @@
-this project is no longer been worked on, for any recommendations, please reccomend them to this project instead: https://github.com/Oliver-code/Conshell.git
+this project is no longer under development, and recommendations will be used on Conshell, for any recommendations, please reccomend them to Conshell instead https://github.com/Oliver-code/Conshell.git
